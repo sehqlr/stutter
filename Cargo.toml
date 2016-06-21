@@ -1,0 +1,6 @@
+[package]
+name = "ancl"
+version = "0.1.0"
+authors = ["Sam Hatfield <samuel.e.hatfield@gmail.com>"]
+
+[dependencies]
