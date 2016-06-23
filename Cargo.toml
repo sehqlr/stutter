@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["Sam Hatfield <samuel.e.hatfield@gmail.com>"]
 
 [dependencies]
+readline = "0.0.12"

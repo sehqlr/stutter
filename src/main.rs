@@ -1,18 +1,22 @@
-use std::io::{self, Write};
+extern crate readline;
+
+fn echo_and_add(line: String) {
+    println!("No, you're a {}", line);
+    match readline::add_history(&line) {
+        Ok(_) => return (),
+        Err(e) => panic!(e)
+    }
+    
+}
 
 fn main() {
     print!("stutter version 0.0.1\n");
     print!("Press Ctrl+c to exit\n");
-    print!("stutter>");
 
     loop {
-        io::stdout().flush().unwrap();
-        let mut input = String::new();
-
-        io::stdin().read_line(&mut input)
-            .expect("Failed to read line");
-
-        println!("No, you're a {}", input);
-        print!("stutter>");
+        match readline::readline("stutter> ") {
+            Ok(line) => echo_and_add(line),
+            Err(_) => break
+        }
     }
 }
