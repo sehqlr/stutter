@@ -5,3 +5,7 @@ authors = ["Sam Hatfield <samuel.e.hatfield@gmail.com>"]
 
 [dependencies]
 readline = "0.0.12"
+
+[dependencies.nom]
+version = "^1.2.3"
+features = ["regexp"]
